@@ -65,6 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="ListItems\" />
+    <Folder Include="DataSources\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -73,9 +76,26 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
+    <Compile Include="ListItems\SourceListItem.cs" />
+    <Compile Include="DataSources\SourceListDataSource.cs" />
+    <Compile Include="Views\SourceListView.cs" />
+    <Compile Include="DataSources\SourceListDelegate.cs" />
+    <Compile Include="SettingsViewController.cs" />
+    <Compile Include="SettingsViewController.designer.cs">
+      <DependentUpon>SettingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReplaceViewSeque.cs" />
+    <Compile Include="FileSettingsViewController.cs" />
+    <Compile Include="FileSettingsViewController.designer.cs">
+      <DependentUpon>FileSettingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiagnosisViewController.cs" />
+    <Compile Include="DiagnosisViewController.designer.cs">
+      <DependentUpon>DiagnosisViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainPaneView.cs" />
+    <Compile Include="MainPaneView.designer.cs">
+      <DependentUpon>MainPaneView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

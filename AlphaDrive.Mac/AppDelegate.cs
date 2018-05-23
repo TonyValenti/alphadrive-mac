@@ -12,6 +12,12 @@ namespace AlphaDrive.Mac
 
         public override void DidFinishLaunching(NSNotification notification)
         {
+            //mainWindowController = new MainWindowController();
+            //mainWindowController.Window.MakeKeyAndOrderFront(this);
+
+            //var rotation = new SettingsViewController();
+            //rotation.Window.MakeKeyAndOrderFront(this);
+
             // Insert code here to initialize your application
         }
 
