@@ -101,5 +101,15 @@
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlphaDrive.Mac.FileSettings\AlphaDrive.Mac.FileSettings.csproj">
+      <Project>{ABDBE485-B3E8-4631-A5DC-FC4FC8B9F01A}</Project>
+      <Name>AlphaDrive.Mac.FileSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlphaDrive.Mac.Diagnostics\AlphaDrive.Mac.Diagnostics.csproj">
+      <Project>{E301FEE3-18F0-4A35-8423-20310646DB92}</Project>
+      <Name>AlphaDrive.Mac.Diagnostics</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

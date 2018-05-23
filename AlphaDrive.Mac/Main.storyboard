@@ -677,15 +677,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="626"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <splitView misplaced="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0h-zh-0gE">
-                                <rect key="frame" x="0.0" y="40" width="800" height="586"/>
+                            <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0h-zh-0gE">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="626"/>
                                 <subviews>
                                     <customView fixedFrame="YES" id="AdW-Bg-p8w">
-                                        <rect key="frame" x="0.0" y="0.0" width="239" height="586"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="239" height="626"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOH-TB-Lor">
-                                                <rect key="frame" x="0.0" y="-40" width="239" height="626"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="239" height="626"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="fAi-o5-sle">
                                                     <rect key="frame" x="1" y="1" width="237" height="624"/>
@@ -772,7 +772,7 @@
                                         </subviews>
                                     </customView>
                                     <customView fixedFrame="YES" id="53k-NB-UXN" customClass="MainPaneView">
-                                        <rect key="frame" x="249" y="0.0" width="551" height="586"/>
+                                        <rect key="frame" x="249" y="0.0" width="551" height="626"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </customView>
                                 </subviews>
@@ -845,42 +845,46 @@ Gw
                                             <rect key="frame" x="10" y="33" width="545" height="556"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncy-WU-em6">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ncy-WU-em6">
                                                     <rect key="frame" x="15" y="536" width="444" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Alpha Drive for Clio can automatically create a Mac Drive for all your files" id="JKB-ev-etX">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5jX-sM-Lte">
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5jX-sM-Lte">
                                                     <rect key="frame" x="15" y="506" width="410" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="check" title="Enable the Clio Drive (requires restarting AlphaDrive if changed)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="P2y-4a-LVn">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <binding destination="YgU-b2-CI0" name="value" keyPath="self.FileSettings.DriveMapEnabledDrive" id="hgJ-4a-7Bh"/>
+                                                    </connections>
                                                 </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jZk-Zn-NEE">
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jZk-Zn-NEE">
                                                     <rect key="frame" x="15" y="474" width="313" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="check" title="Attach the Clio Drive to the following drive letter" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7Ap-Oc-EVA">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <binding destination="YgU-b2-CI0" name="value" keyPath="self.FileSettings.DriveMapAttachDriveName" id="QaT-Nm-LRj"/>
+                                                    </connections>
                                                 </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvH-vp-85c">
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fvH-vp-85c">
                                                     <rect key="frame" x="15" y="411" width="248" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="check" title="Automatically show files after loading" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="v4I-C2-5gi">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <binding destination="YgU-b2-CI0" name="value" keyPath="self.FileSettings.DriveMapShowAfterLoading" id="y8c-6f-9FO"/>
+                                                    </connections>
                                                 </button>
-                                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-J7-CCO">
+                                                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-J7-CCO">
                                                     <rect key="frame" x="15" y="442" width="76" height="26"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="aX2-3M-UWa" id="ewv-Bb-0ym">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="menu"/>
@@ -894,6 +898,18 @@ Gw
                                                     </popUpButtonCell>
                                                 </popUpButton>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZO2-J7-CCO" firstAttribute="top" secondItem="jZk-Zn-NEE" secondAttribute="bottom" constant="10" id="8fW-dl-Oe8"/>
+                                                <constraint firstItem="ncy-WU-em6" firstAttribute="top" secondItem="ECN-zz-03k" secondAttribute="top" constant="3" id="RLt-JA-YVt"/>
+                                                <constraint firstItem="5jX-sM-Lte" firstAttribute="top" secondItem="ncy-WU-em6" secondAttribute="bottom" constant="14" id="T6y-hQ-00B"/>
+                                                <constraint firstItem="jZk-Zn-NEE" firstAttribute="leading" secondItem="ZO2-J7-CCO" secondAttribute="leading" id="WXT-Ak-XGt"/>
+                                                <constraint firstItem="ZO2-J7-CCO" firstAttribute="leading" secondItem="fvH-vp-85c" secondAttribute="leading" id="Yuo-BM-RVm"/>
+                                                <constraint firstItem="ncy-WU-em6" firstAttribute="leading" secondItem="ECN-zz-03k" secondAttribute="leading" constant="17" id="e1W-mA-OX4"/>
+                                                <constraint firstItem="ncy-WU-em6" firstAttribute="leading" secondItem="5jX-sM-Lte" secondAttribute="leading" id="jZg-13-0U2"/>
+                                                <constraint firstItem="5jX-sM-Lte" firstAttribute="leading" secondItem="jZk-Zn-NEE" secondAttribute="leading" id="nNu-2J-MLY"/>
+                                                <constraint firstItem="jZk-Zn-NEE" firstAttribute="top" secondItem="5jX-sM-Lte" secondAttribute="bottom" constant="18" id="slI-Tx-W8j"/>
+                                                <constraint firstItem="fvH-vp-85c" firstAttribute="top" secondItem="ZO2-J7-CCO" secondAttribute="bottom" constant="18" id="wbr-IF-YDT"/>
+                                            </constraints>
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Matter Organization" identifier="matterOrganizationTab" id="ixp-qW-RYx">
@@ -901,18 +917,19 @@ Gw
                                             <rect key="frame" x="10" y="33" width="545" height="556"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAG-p3-EhF">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aAG-p3-EhF">
                                                     <rect key="frame" x="15" y="536" width="276" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="272" id="1wn-P7-KWt"/>
+                                                    </constraints>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Organize matters using the following format:" id="sba-6v-suJ">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dcO-Vx-4Zv">
+                                                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dcO-Vx-4Zv">
                                                     <rect key="frame" x="15" y="504" width="516" height="26"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="t9H-U1-x8J" id="keC-17-Ycn">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="menu"/>
@@ -926,6 +943,13 @@ Gw
                                                     </popUpButtonCell>
                                                 </popUpButton>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="dcO-Vx-4Zv" secondAttribute="trailing" constant="17" id="5TJ-cl-Tbl"/>
+                                                <constraint firstItem="aAG-p3-EhF" firstAttribute="top" secondItem="KBP-VT-zwF" secondAttribute="top" constant="3" id="ECl-ga-GzH"/>
+                                                <constraint firstItem="dcO-Vx-4Zv" firstAttribute="top" secondItem="aAG-p3-EhF" secondAttribute="bottom" constant="8" symbolic="YES" id="HI5-hj-wyo"/>
+                                                <constraint firstItem="aAG-p3-EhF" firstAttribute="leading" secondItem="dcO-Vx-4Zv" secondAttribute="leading" id="owk-qz-8D9"/>
+                                                <constraint firstItem="aAG-p3-EhF" firstAttribute="leading" secondItem="KBP-VT-zwF" secondAttribute="leading" constant="17" id="v4L-1v-lSe"/>
+                                            </constraints>
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Extras" identifier="extrasTab" id="O3u-WG-zak">
@@ -933,41 +957,51 @@ Gw
                                             <rect key="frame" x="10" y="33" width="545" height="556"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <box fixedFrame="YES" title="Virtual Folders" translatesAutoresizingMaskIntoConstraints="NO" id="XVo-pg-a9I">
+                                                <box title="Virtual Folders" translatesAutoresizingMaskIntoConstraints="NO" id="XVo-pg-a9I">
                                                     <rect key="frame" x="6" y="349" width="533" height="199"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="zmI-Fx-drz">
                                                         <rect key="frame" x="2" y="2" width="529" height="182"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uoQ-ki-EOR">
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uoQ-ki-EOR">
                                                                 <rect key="frame" x="10" y="154" width="194" height="18"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="14" id="emM-qF-2TR"/>
+                                                                </constraints>
                                                                 <buttonCell key="cell" type="check" title="Show the 'Client Files' folder" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="CLt-G6-MNd">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="YgU-b2-CI0" name="value" keyPath="self.FileSettings.ExtrasShowClientFiles" id="8vn-YS-rLd"/>
+                                                                </connections>
                                                             </button>
-                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p2r-dk-pTm">
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p2r-dk-pTm">
                                                                 <rect key="frame" x="10" y="115" width="499" height="40"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="The 'Client Files' folder makes it easier to access files that a client may share with you via Clio Connect" id="zGI-j8-tH9">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
-                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qfK-Re-SB7">
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qfK-Re-SB7">
                                                                 <rect key="frame" x="10" y="84" width="159" height="18"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="14" id="pdE-0z-3xq"/>
+                                                                </constraints>
                                                                 <buttonCell key="cell" type="check" title="Show 'Clio Bills Folder'" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="jA1-r2-IgI">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="YgU-b2-CI0" name="value" keyPath="self.FileSettings.ExtrasShowClioBills" id="DVS-qv-RHG"/>
+                                                                </connections>
                                                             </button>
-                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gF-Uh-apH">
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9gF-Uh-apH">
                                                                 <rect key="frame" x="10" y="67" width="323" height="17"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="17" id="e1s-Gh-S7Q"/>
+                                                                </constraints>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="The 'Clio Bills' enable access to all bills stored in Clio" id="uSb-1v-8iR">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -975,59 +1009,101 @@ Gw
                                                                 </textFieldCell>
                                                             </textField>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="uoQ-ki-EOR" firstAttribute="top" secondItem="zmI-Fx-drz" secondAttribute="top" constant="12" id="3Rb-6o-v89"/>
+                                                            <constraint firstItem="qfK-Re-SB7" firstAttribute="top" secondItem="p2r-dk-pTm" secondAttribute="bottom" constant="15" id="9GD-Wh-9CV"/>
+                                                            <constraint firstItem="p2r-dk-pTm" firstAttribute="top" secondItem="uoQ-ki-EOR" secondAttribute="bottom" constant="1" id="AJu-vX-JGV"/>
+                                                            <constraint firstItem="qfK-Re-SB7" firstAttribute="leading" secondItem="9gF-Uh-apH" secondAttribute="leading" id="Giv-xh-7mU"/>
+                                                            <constraint firstItem="uoQ-ki-EOR" firstAttribute="leading" secondItem="zmI-Fx-drz" secondAttribute="leading" constant="12" id="MMP-6d-YzD"/>
+                                                            <constraint firstItem="9gF-Uh-apH" firstAttribute="top" secondItem="qfK-Re-SB7" secondAttribute="bottom" constant="2" id="RVi-LG-h9P"/>
+                                                            <constraint firstItem="p2r-dk-pTm" firstAttribute="leading" secondItem="qfK-Re-SB7" secondAttribute="leading" id="X04-8y-poC"/>
+                                                            <constraint firstAttribute="bottom" secondItem="9gF-Uh-apH" secondAttribute="bottom" constant="67" id="XGM-Ym-8rd"/>
+                                                            <constraint firstItem="uoQ-ki-EOR" firstAttribute="leading" secondItem="p2r-dk-pTm" secondAttribute="leading" id="rdr-kS-aRF"/>
+                                                        </constraints>
                                                     </view>
                                                 </box>
-                                                <box fixedFrame="YES" title="Virtual Files" translatesAutoresizingMaskIntoConstraints="NO" id="ZE1-E2-rRW">
+                                                <box title="Virtual Files" translatesAutoresizingMaskIntoConstraints="NO" id="ZE1-E2-rRW">
                                                     <rect key="frame" x="6" y="187" width="533" height="151"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="zaK-Nd-dse">
                                                         <rect key="frame" x="2" y="2" width="529" height="134"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HJ1-TA-3cM">
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HJ1-TA-3cM">
                                                                 <rect key="frame" x="18" y="105" width="243" height="18"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <buttonCell key="cell" type="check" title="Show 'Launch Clio' Virtual Shortcuts" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Si8-Xf-h1T">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="YgU-b2-CI0" name="value" keyPath="self.FileSettings.ExtrasShowLaunchClio" id="gmE-5J-atp"/>
+                                                                </connections>
                                                             </button>
-                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cE-mj-eLy">
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0cE-mj-eLy">
                                                                 <rect key="frame" x="18" y="77" width="280" height="18"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <buttonCell key="cell" type="check" title="Show 'View Client in Clio' Virtual Shortcuts" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iBg-ja-Ff9">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="YgU-b2-CI0" name="value" keyPath="self.FileSettings.ExtrasViewClientsClio" id="Kfo-8F-X2u"/>
+                                                                </connections>
                                                             </button>
-                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdh-wg-CB0">
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gdh-wg-CB0">
                                                                 <rect key="frame" x="18" y="48" width="285" height="18"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <buttonCell key="cell" type="check" title="Show 'View Matter in Clio' Virtual Shortcuts" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Pd5-Cx-6pR">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="YgU-b2-CI0" name="value" keyPath="self.FileSettings.ExtrasViewMatterInClio" id="RqP-p7-CbH"/>
+                                                                </connections>
                                                             </button>
-                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwW-Ul-UFP">
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fwW-Ul-UFP">
                                                                 <rect key="frame" x="18" y="21" width="279" height="18"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <buttonCell key="cell" type="check" title="Show 'Create New Matter' Virtual Shortcut" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="YG5-pW-yd9">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="YgU-b2-CI0" name="value" keyPath="self.FileSettings.ExtrasShowCreateNewMatter" id="XJ1-ZZ-Hh2"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="0cE-mj-eLy" firstAttribute="leading" secondItem="gdh-wg-CB0" secondAttribute="leading" id="1tC-54-yLW"/>
+                                                            <constraint firstItem="HJ1-TA-3cM" firstAttribute="leading" secondItem="0cE-mj-eLy" secondAttribute="leading" id="3nR-tN-32r"/>
+                                                            <constraint firstItem="gdh-wg-CB0" firstAttribute="top" secondItem="0cE-mj-eLy" secondAttribute="bottom" constant="15" id="Hhe-6F-kJr"/>
+                                                            <constraint firstItem="HJ1-TA-3cM" firstAttribute="top" secondItem="zaK-Nd-dse" secondAttribute="top" constant="13" id="Igg-Ut-Hez"/>
+                                                            <constraint firstItem="0cE-mj-eLy" firstAttribute="top" secondItem="HJ1-TA-3cM" secondAttribute="bottom" constant="14" id="XvO-CK-4ZW"/>
+                                                            <constraint firstAttribute="bottom" secondItem="fwW-Ul-UFP" secondAttribute="bottom" constant="23" id="Zp2-i0-xWK"/>
+                                                            <constraint firstItem="HJ1-TA-3cM" firstAttribute="leading" secondItem="zaK-Nd-dse" secondAttribute="leading" constant="20" symbolic="YES" id="fST-Nc-5RZ"/>
+                                                            <constraint firstItem="fwW-Ul-UFP" firstAttribute="top" secondItem="gdh-wg-CB0" secondAttribute="bottom" constant="13" id="plm-GY-kGc"/>
+                                                            <constraint firstItem="gdh-wg-CB0" firstAttribute="leading" secondItem="fwW-Ul-UFP" secondAttribute="leading" id="xXO-jt-ru8"/>
+                                                        </constraints>
                                                     </view>
                                                 </box>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XVo-pg-a9I" firstAttribute="leading" secondItem="SNn-Iw-EcZ" secondAttribute="leading" constant="9" id="2p8-SZ-ps8"/>
+                                                <constraint firstAttribute="trailing" secondItem="XVo-pg-a9I" secondAttribute="trailing" constant="9" id="ELQ-VD-IH7"/>
+                                                <constraint firstItem="XVo-pg-a9I" firstAttribute="top" secondItem="SNn-Iw-EcZ" secondAttribute="top" constant="8" id="UQD-H4-ybT"/>
+                                                <constraint firstItem="ZE1-E2-rRW" firstAttribute="top" secondItem="XVo-pg-a9I" secondAttribute="bottom" constant="15" id="YcX-5u-VxM"/>
+                                                <constraint firstItem="XVo-pg-a9I" firstAttribute="leading" secondItem="ZE1-E2-rRW" secondAttribute="leading" id="miA-hI-XsV"/>
+                                                <constraint firstItem="XVo-pg-a9I" firstAttribute="trailing" secondItem="ZE1-E2-rRW" secondAttribute="trailing" id="puD-9o-jSy"/>
+                                                <constraint firstItem="ZE1-E2-rRW" firstAttribute="top" secondItem="SNn-Iw-EcZ" secondAttribute="top" constant="218" id="sRS-GW-Rbl"/>
+                                            </constraints>
                                         </view>
                                     </tabViewItem>
                                 </tabViewItems>
                             </tabView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="b4F-y1-bUw" firstAttribute="top" secondItem="hEX-HH-kLI" secondAttribute="top" id="1Pu-wk-UzF"/>
+                            <constraint firstAttribute="bottom" secondItem="b4F-y1-bUw" secondAttribute="bottom" id="BDb-cr-AAc"/>
                             <constraint firstAttribute="bottom" secondItem="b4F-y1-bUw" secondAttribute="bottom" id="BeH-1j-EFf"/>
+                            <constraint firstAttribute="trailing" secondItem="b4F-y1-bUw" secondAttribute="trailing" id="Bg9-wp-FGg"/>
                             <constraint firstItem="b4F-y1-bUw" firstAttribute="top" secondItem="hEX-HH-kLI" secondAttribute="top" id="Mjs-ya-Aez"/>
+                            <constraint firstItem="b4F-y1-bUw" firstAttribute="leading" secondItem="hEX-HH-kLI" secondAttribute="leading" id="OKN-gb-ei9"/>
                             <constraint firstAttribute="trailing" secondItem="b4F-y1-bUw" secondAttribute="trailing" id="ffR-la-emU"/>
                             <constraint firstItem="b4F-y1-bUw" firstAttribute="leading" secondItem="hEX-HH-kLI" secondAttribute="leading" id="kkd-hM-8oV"/>
                         </constraints>
@@ -1047,6 +1123,7 @@ Gw
                     </connections>
                 </viewController>
                 <customObject id="CCG-Nd-tVa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="R1Q-yc-fzL"/>
             </objects>
             <point key="canvasLocation" x="196.5" y="1606"/>
         </scene>
@@ -1078,8 +1155,11 @@ Gw
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <size key="minSize" width="530" height="544"/>
-                                                                <size key="maxSize" width="536" height="10000000"/>
+                                                                <size key="maxSize" width="547" height="10000000"/>
                                                                 <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <connections>
+                                                                    <binding destination="wvJ-7w-ETc" name="attributedString" keyPath="self.DiagnosisInfoModel.DiagnosisTextOutput" id="0Uf-Aw-2Sd"/>
+                                                                </connections>
                                                             </textView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1116,6 +1196,7 @@ Gw
                     </view>
                 </viewController>
                 <customObject id="iO7-Kg-LCK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="VhB-QJ-xeu"/>
             </objects>
             <point key="canvasLocation" x="809.5" y="1606"/>
         </scene>

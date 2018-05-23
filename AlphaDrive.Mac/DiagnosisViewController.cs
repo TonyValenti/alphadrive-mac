@@ -4,6 +4,7 @@ using System;
 
 using Foundation;
 using AppKit;
+using AlphaDrive.Mac.Diagnostics.Models;
 
 namespace AlphaDrive.Mac
 {
@@ -12,5 +13,28 @@ namespace AlphaDrive.Mac
 		public DiagnosisViewController (IntPtr handle) : base (handle)
 		{
 		}
+
+        private DiagnosisInfoModel _diagnosisInfo = new DiagnosisInfoModel();
+
+        [Export("DiagnosisInfoModel")]
+        public DiagnosisInfoModel DiagnosisInfoModel
+        {
+            get { return _diagnosisInfo; }
+            set
+            {
+                WillChangeValue(nameof(DiagnosisInfoModel));
+                _diagnosisInfo = value;
+                DidChangeValue(nameof(DiagnosisInfoModel));
+            }
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            DiagnosisInfoModel = new DiagnosisInfoModel();
+            DiagnosisInfoModel.LoadSettings();
+        }
+
 	}
 }

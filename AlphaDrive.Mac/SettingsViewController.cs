@@ -5,6 +5,7 @@ using System;
 using Foundation;
 using AppKit;
 using AlphaDrive.Mac.ListItems;
+using System.Linq;
 
 namespace AlphaDrive.Mac
 {
@@ -40,7 +41,7 @@ namespace AlphaDrive.Mac
         {
             if (sender is SourceListItem item)
             {
-                MainPane.RemoveFromSuperview();
+                MainPane.Subviews.FirstOrDefault()?.RemoveFromSuperview();
                 if (item.Tag == "0")
                 {
                     MainPane.AddSubview(_fileSettingsViewControl.View);
@@ -49,6 +50,7 @@ namespace AlphaDrive.Mac
                 {
                     MainPane.AddSubview(_diagnosisViewControl.View);
                 }
+                
             }
 
         }
@@ -77,31 +79,6 @@ namespace AlphaDrive.Mac
             advanceSection.AddItem(new SourceListItem("Diagnosis", null, "8", OnItemClicked));
             SourceList.AddItem(advanceSection);
 
-
-            /*
-            var library = new SourceListItem("Library");
-            library.AddItem("Venues", "house.png", () => {
-                Console.WriteLine("Venue Selected");
-            });
-            library.AddItem("Singers", "group.png");
-            library.AddItem("Genre", "cards.png");
-            library.AddItem("Publishers", "box.png");
-            library.AddItem("Artist", "person.png");
-            library.AddItem("Music", "album.png");
-            SourceList.AddItem(library);
-
-            // Add Rotation 
-            var rotation = new SourceListItem("Rotation");
-            rotation.AddItem("View Rotation", "redo.png");
-            SourceList.AddItem(rotation);
-
-            // Add Kiosks
-            var kiosks = new SourceListItem("Kiosks");
-            kiosks.AddItem("Sign-in Station 1", "imac");
-            kiosks.AddItem("Sign-in Station 2", "ipad");
-            SourceList.AddItem(kiosks);
-*/
-
             // Display side list
             SourceList.ReloadData();
 
@@ -116,36 +93,6 @@ namespace AlphaDrive.Mac
             _diagnosisViewControl = (DiagnosisViewController)this.Storyboard.InstantiateControllerWithIdentifier("DiagnosisViewController");
 
             MainPane.AddSubview(_fileSettingsViewControl.View);
-
-
-            //SourceList.Initialize();
-
-            //var library = new SourceListItem("Library");
-            //library.AddItem("Venues", "house.png", () => {
-            //    Console.WriteLine("Venue Selected");
-            //});
-            //library.AddItem("Singers", "group.png");
-            //library.AddItem("Genre", "cards.png");
-            //library.AddItem("Publishers", "box.png");
-            //library.AddItem("Artist", "person.png");
-            //library.AddItem("Music", "album.png");
-            //SourceList.AddItem(library);
-
-            //// Add Rotation 
-            //var rotation = new SourceListItem("Rotation");
-            //rotation.AddItem("View Rotation", "redo.png");
-            //SourceList.AddItem(rotation);
-
-            //// Add Kiosks
-            //var kiosks = new SourceListItem("Kiosks");
-            //kiosks.AddItem("Sign-in Station 1", "imac");
-            //kiosks.AddItem("Sign-in Station 2", "ipad");
-            //SourceList.AddItem(kiosks);
-
-            //// Display side list
-            //SourceList.ReloadData();
-            //SourceList.ExpandItem(null, true);
-
 
         }
 
