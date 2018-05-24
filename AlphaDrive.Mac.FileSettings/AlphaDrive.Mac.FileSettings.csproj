@@ -53,10 +53,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\FileSettingsModel.cs" />
     <Compile Include="Interfaces\IFileSettingsModel.cs" />
+    <Compile Include="FileSettingsViewController.cs" />
+    <Compile Include="FileSettingsViewController.designer.cs">
+      <DependentUpon>FileSettingsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="FileSettingsStoryboard.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

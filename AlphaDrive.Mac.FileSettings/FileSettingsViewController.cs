@@ -6,13 +6,20 @@ using Foundation;
 using AppKit;
 using AlphaDrive.Mac.FileSettings.Models;
 
-namespace AlphaDrive.Mac
+namespace AlphaDrive.Mac.FileSettings
 {
-	public partial class FileSettingsViewController : NSViewController
-	{
-		public FileSettingsViewController (IntPtr handle) : base (handle)
-		{
-		}
+    public partial class FileSettingsViewController : NSViewController
+    {
+        public static FileSettingsViewController CreateController()
+        {
+            var board = NSStoryboard.FromName("FileSettingsStoryboard", null);
+            return (FileSettingsViewController)board.InstantiateControllerWithIdentifier("FileSettingsViewController");
+        }
+
+
+        public FileSettingsViewController(IntPtr handle) : base(handle)
+        {
+        }
 
         private FileSettingsModel _fileSettings = new FileSettingsModel();
 

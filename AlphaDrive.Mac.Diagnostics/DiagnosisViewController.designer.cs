@@ -7,7 +7,7 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace AlphaDrive.Mac
+namespace AlphaDrive.Mac.Diagnostics
 {
 	[Register ("DiagnosisViewController")]
 	partial class DiagnosisViewController

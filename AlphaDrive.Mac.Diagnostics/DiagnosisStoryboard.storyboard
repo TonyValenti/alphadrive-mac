@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Diagnosis View Controller-->
+        <scene sceneID="rGM-Zh-XDB">
+            <objects>
+                <viewController storyboardIdentifier="DiagnosisViewController" id="iF9-Oh-stx" customClass="DiagnosisViewController" sceneMemberID="viewController">
+                    <view key="view" id="C4R-oh-zmS">
+                        <rect key="frame" x="0.0" y="0.0" width="551" height="586"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <tabView initialItem="IG2-de-4dC" translatesAutoresizingMaskIntoConstraints="NO" id="HbT-p5-4D8">
+                                <rect key="frame" x="-8" y="-10" width="567" height="602"/>
+                                <font key="font" metaFont="system"/>
+                                <tabViewItems>
+                                    <tabViewItem label="Diagnostic information" identifier="" id="IG2-de-4dC">
+                                        <view key="view" id="6vy-kB-UNA">
+                                            <rect key="frame" x="10" y="33" width="547" height="556"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI9-ge-6vC">
+                                                    <rect key="frame" x="0.0" y="5" width="547" height="546"/>
+                                                    <clipView key="contentView" id="peL-NH-ojI">
+                                                        <rect key="frame" x="1" y="1" width="530" height="544"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="r06-2n-EQA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="530" height="544"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <size key="minSize" width="530" height="544"/>
+                                                                <size key="maxSize" width="547" height="10000000"/>
+                                                                <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <connections>
+                                                                    <binding destination="iF9-Oh-stx" name="attributedString" keyPath="self.DiagnosisInfoModel.DiagnosisTextOutput" id="YfI-bR-hwr"/>
+                                                                </connections>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </clipView>
+                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="v8M-ht-ltx">
+                                                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="rxx-Cg-W2k">
+                                                        <rect key="frame" x="531" y="1" width="15" height="544"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                </scrollView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="WI9-ge-6vC" secondAttribute="bottom" constant="5" id="3BT-sl-R4d"/>
+                                                <constraint firstAttribute="trailing" secondItem="WI9-ge-6vC" secondAttribute="trailing" id="HKq-Et-IwF"/>
+                                                <constraint firstAttribute="trailing" secondItem="WI9-ge-6vC" secondAttribute="trailing" id="IHR-dV-HOV"/>
+                                                <constraint firstItem="WI9-ge-6vC" firstAttribute="leading" secondItem="6vy-kB-UNA" secondAttribute="leading" id="dgN-gF-eN2"/>
+                                                <constraint firstItem="WI9-ge-6vC" firstAttribute="top" secondItem="6vy-kB-UNA" secondAttribute="top" constant="5" id="gDR-4Y-tTS"/>
+                                                <constraint firstItem="WI9-ge-6vC" firstAttribute="leading" secondItem="6vy-kB-UNA" secondAttribute="leading" id="x9t-YY-kSg"/>
+                                            </constraints>
+                                        </view>
+                                    </tabViewItem>
+                                </tabViewItems>
+                            </tabView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HbT-p5-4D8" secondAttribute="bottom" id="Tsb-OL-Rdc"/>
+                            <constraint firstAttribute="trailing" secondItem="HbT-p5-4D8" secondAttribute="trailing" constant="-1" id="VYG-D1-y4y"/>
+                            <constraint firstItem="HbT-p5-4D8" firstAttribute="top" secondItem="C4R-oh-zmS" secondAttribute="top" id="apz-Sr-JUe"/>
+                            <constraint firstItem="HbT-p5-4D8" firstAttribute="leading" secondItem="C4R-oh-zmS" secondAttribute="leading" constant="-1" id="dPv-py-cnc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="Jc1-cM-7RZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="WC7-l5-Cqm"/>
+            </objects>
+            <point key="canvasLocation" x="809.5" y="1606"/>
+        </scene>
+    </scenes>
+</document>

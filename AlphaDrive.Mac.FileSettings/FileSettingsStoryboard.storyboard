@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alpha Drive for Clio Settings-->
+        <scene sceneID="00F-Dv-0fh">
+            <objects>
+                <viewController title="Alpha Drive for Clio Settings" storyboardIdentifier="FileSettingsViewController" id="XuZ-bU-zOl" customClass="FileSettingsViewController" sceneMemberID="viewController">
+                    <view key="view" id="qJa-kb-pjr">
+                        <rect key="frame" x="0.0" y="0.0" width="551" height="586"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <tabView translatesAutoresizingMaskIntoConstraints="NO" id="oPK-mc-hT7">
+                                <rect key="frame" x="-7" y="-10" width="565" height="602"/>
+                                <font key="font" metaFont="system"/>
+                                <tabViewItems>
+                                    <tabViewItem label="Drive Mapping" identifier="driveMapTab" id="6Sj-zW-3No">
+                                        <view key="view" id="mSW-J7-Vqh">
+                                            <rect key="frame" x="10" y="33" width="545" height="556"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EjA-bE-Qcw">
+                                                    <rect key="frame" x="15" y="536" width="444" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Alpha Drive for Clio can automatically create a Mac Drive for all your files" id="caU-zm-wdP">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TYh-vG-gUc">
+                                                    <rect key="frame" x="15" y="506" width="410" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Enable the Clio Drive (requires restarting AlphaDrive if changed)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="If5-Rq-baQ">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <binding destination="XuZ-bU-zOl" name="value" keyPath="self.FileSettings.DriveMapEnabledDrive" id="JTL-hE-Kf7"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jrD-hE-d1B">
+                                                    <rect key="frame" x="15" y="474" width="313" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Attach the Clio Drive to the following drive letter" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="fwo-Fh-Vn7">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <binding destination="XuZ-bU-zOl" name="value" keyPath="self.FileSettings.DriveMapAttachDriveName" id="2Id-ED-4ay"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JK9-QQ-eA9">
+                                                    <rect key="frame" x="15" y="411" width="248" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Automatically show files after loading" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="IqG-or-wRP">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <binding destination="XuZ-bU-zOl" name="value" keyPath="self.FileSettings.DriveMapShowAfterLoading" id="eWA-Gb-6d3"/>
+                                                    </connections>
+                                                </button>
+                                                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="73L-Uu-to5">
+                                                    <rect key="frame" x="15" y="442" width="76" height="26"/>
+                                                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gQh-cc-Ghz" id="aH6-pe-UR5">
+                                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="menu"/>
+                                                        <menu key="menu" id="v8w-E6-xrD">
+                                                            <items>
+                                                                <menuItem title="Item 1" state="on" id="gQh-cc-Ghz"/>
+                                                                <menuItem title="Item 2" id="7qv-7Q-J0U"/>
+                                                                <menuItem title="Item 3" id="0Jx-0s-5Qh"/>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpButtonCell>
+                                                </popUpButton>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EjA-bE-Qcw" firstAttribute="leading" secondItem="mSW-J7-Vqh" secondAttribute="leading" constant="17" id="29N-Ya-Cg8"/>
+                                                <constraint firstItem="TYh-vG-gUc" firstAttribute="top" secondItem="EjA-bE-Qcw" secondAttribute="bottom" constant="14" id="5rM-bb-V3B"/>
+                                                <constraint firstItem="jrD-hE-d1B" firstAttribute="leading" secondItem="73L-Uu-to5" secondAttribute="leading" id="7sR-Zb-MrA"/>
+                                                <constraint firstItem="EjA-bE-Qcw" firstAttribute="leading" secondItem="TYh-vG-gUc" secondAttribute="leading" id="DjS-EH-acV"/>
+                                                <constraint firstItem="TYh-vG-gUc" firstAttribute="leading" secondItem="jrD-hE-d1B" secondAttribute="leading" id="Ewd-vI-9vG"/>
+                                                <constraint firstItem="73L-Uu-to5" firstAttribute="leading" secondItem="JK9-QQ-eA9" secondAttribute="leading" id="Kkp-r0-wrR"/>
+                                                <constraint firstItem="JK9-QQ-eA9" firstAttribute="top" secondItem="73L-Uu-to5" secondAttribute="bottom" constant="18" id="LRf-A7-6cH"/>
+                                                <constraint firstItem="73L-Uu-to5" firstAttribute="top" secondItem="jrD-hE-d1B" secondAttribute="bottom" constant="10" id="WL0-7U-z5z"/>
+                                                <constraint firstItem="EjA-bE-Qcw" firstAttribute="top" secondItem="mSW-J7-Vqh" secondAttribute="top" constant="3" id="pFJ-L2-Xlq"/>
+                                                <constraint firstItem="jrD-hE-d1B" firstAttribute="top" secondItem="TYh-vG-gUc" secondAttribute="bottom" constant="18" id="weH-A4-NOI"/>
+                                            </constraints>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="Matter Organization" identifier="matterOrganizationTab" id="w4B-JK-D9n">
+                                        <view key="view" id="PdS-HV-Nom">
+                                            <rect key="frame" x="10" y="33" width="545" height="556"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RLo-ny-8Jp">
+                                                    <rect key="frame" x="15" y="536" width="276" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="272" id="0y0-hX-6fO"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Organize matters using the following format:" id="q2H-CX-y1m">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="crB-nu-SIf">
+                                                    <rect key="frame" x="15" y="504" width="516" height="26"/>
+                                                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ws9-Mu-9yE" id="kOx-lH-jLx">
+                                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="menu"/>
+                                                        <menu key="menu" id="8LR-6x-d6H">
+                                                            <items>
+                                                                <menuItem title="Item 1" state="on" id="Ws9-Mu-9yE"/>
+                                                                <menuItem title="Item 2" id="dzi-Gn-rvr"/>
+                                                                <menuItem title="Item 3" id="2GZ-Nl-QTo"/>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpButtonCell>
+                                                </popUpButton>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RLo-ny-8Jp" firstAttribute="leading" secondItem="PdS-HV-Nom" secondAttribute="leading" constant="17" id="JI7-rx-RQT"/>
+                                                <constraint firstAttribute="trailing" secondItem="crB-nu-SIf" secondAttribute="trailing" constant="17" id="KKA-wA-FfR"/>
+                                                <constraint firstItem="crB-nu-SIf" firstAttribute="top" secondItem="RLo-ny-8Jp" secondAttribute="bottom" constant="8" symbolic="YES" id="LMI-TI-S5X"/>
+                                                <constraint firstItem="RLo-ny-8Jp" firstAttribute="leading" secondItem="crB-nu-SIf" secondAttribute="leading" id="cjd-89-8c3"/>
+                                                <constraint firstItem="RLo-ny-8Jp" firstAttribute="top" secondItem="PdS-HV-Nom" secondAttribute="top" constant="3" id="xYx-nT-zka"/>
+                                            </constraints>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="Extras" identifier="extrasTab" id="OoS-Za-K0C">
+                                        <view key="view" id="lRX-AZ-Kgv">
+                                            <rect key="frame" x="10" y="33" width="545" height="556"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <box title="Virtual Folders" translatesAutoresizingMaskIntoConstraints="NO" id="4Wv-C2-SZt">
+                                                    <rect key="frame" x="6" y="349" width="533" height="199"/>
+                                                    <view key="contentView" id="k3E-VZ-6zj">
+                                                        <rect key="frame" x="2" y="2" width="529" height="182"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Abg-20-76K">
+                                                                <rect key="frame" x="10" y="154" width="194" height="18"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="14" id="Xef-I1-m0r"/>
+                                                                </constraints>
+                                                                <buttonCell key="cell" type="check" title="Show the 'Client Files' folder" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="j6Q-wq-j0z">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="XuZ-bU-zOl" name="value" keyPath="self.FileSettings.ExtrasShowClientFiles" id="0M0-lR-x77"/>
+                                                                </connections>
+                                                            </button>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98C-1b-WtW">
+                                                                <rect key="frame" x="10" y="115" width="499" height="40"/>
+                                                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="The 'Client Files' folder makes it easier to access files that a client may share with you via Clio Connect" id="BRp-ur-j7F">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQ0-dX-D3E">
+                                                                <rect key="frame" x="10" y="84" width="159" height="18"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="14" id="Uwt-9l-Ues"/>
+                                                                </constraints>
+                                                                <buttonCell key="cell" type="check" title="Show 'Clio Bills Folder'" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bRK-7U-SKU">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="XuZ-bU-zOl" name="value" keyPath="self.FileSettings.ExtrasShowClioBills" id="brT-hy-vhk"/>
+                                                                </connections>
+                                                            </button>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HSs-ka-9uN">
+                                                                <rect key="frame" x="10" y="67" width="323" height="17"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="17" id="SF3-tk-Qh9"/>
+                                                                </constraints>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="The 'Clio Bills' enable access to all bills stored in Clio" id="kHD-y8-NPe">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="98C-1b-WtW" firstAttribute="leading" secondItem="fQ0-dX-D3E" secondAttribute="leading" id="7E1-so-FhN"/>
+                                                            <constraint firstItem="Abg-20-76K" firstAttribute="top" secondItem="k3E-VZ-6zj" secondAttribute="top" constant="12" id="8po-rA-6Ab"/>
+                                                            <constraint firstItem="fQ0-dX-D3E" firstAttribute="top" secondItem="98C-1b-WtW" secondAttribute="bottom" constant="15" id="AVU-hU-gCW"/>
+                                                            <constraint firstItem="HSs-ka-9uN" firstAttribute="top" secondItem="fQ0-dX-D3E" secondAttribute="bottom" constant="2" id="HA5-OM-veh"/>
+                                                            <constraint firstItem="fQ0-dX-D3E" firstAttribute="leading" secondItem="HSs-ka-9uN" secondAttribute="leading" id="Nl2-dw-e8r"/>
+                                                            <constraint firstAttribute="bottom" secondItem="HSs-ka-9uN" secondAttribute="bottom" constant="67" id="ORB-bN-ujz"/>
+                                                            <constraint firstItem="98C-1b-WtW" firstAttribute="top" secondItem="Abg-20-76K" secondAttribute="bottom" constant="1" id="Sll-CS-vC0"/>
+                                                            <constraint firstItem="Abg-20-76K" firstAttribute="leading" secondItem="98C-1b-WtW" secondAttribute="leading" id="kAl-QM-ZBr"/>
+                                                            <constraint firstItem="Abg-20-76K" firstAttribute="leading" secondItem="k3E-VZ-6zj" secondAttribute="leading" constant="12" id="nvC-EJ-72A"/>
+                                                        </constraints>
+                                                    </view>
+                                                </box>
+                                                <box title="Virtual Files" translatesAutoresizingMaskIntoConstraints="NO" id="rPB-fm-epk">
+                                                    <rect key="frame" x="6" y="187" width="533" height="151"/>
+                                                    <view key="contentView" id="2Z1-YV-MAy">
+                                                        <rect key="frame" x="2" y="2" width="529" height="134"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TFr-TO-kD3">
+                                                                <rect key="frame" x="18" y="105" width="243" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="Show 'Launch Clio' Virtual Shortcuts" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Nce-Jw-szV">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="XuZ-bU-zOl" name="value" keyPath="self.FileSettings.ExtrasShowLaunchClio" id="fOn-K8-4lR"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I8s-52-PBa">
+                                                                <rect key="frame" x="18" y="77" width="280" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="Show 'View Client in Clio' Virtual Shortcuts" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Upk-8e-gPV">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="XuZ-bU-zOl" name="value" keyPath="self.FileSettings.ExtrasViewClientsClio" id="azw-Of-z5A"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IcN-G9-SXV">
+                                                                <rect key="frame" x="18" y="48" width="285" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="Show 'View Matter in Clio' Virtual Shortcuts" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7LS-bA-rvh">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="XuZ-bU-zOl" name="value" keyPath="self.FileSettings.ExtrasViewMatterInClio" id="kwU-Sp-nPz"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="akZ-iM-Ivq">
+                                                                <rect key="frame" x="18" y="21" width="279" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="Show 'Create New Matter' Virtual Shortcut" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Oto-W8-HO8">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <binding destination="XuZ-bU-zOl" name="value" keyPath="self.FileSettings.ExtrasShowCreateNewMatter" id="wd7-PZ-aaa"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="TFr-TO-kD3" firstAttribute="top" secondItem="2Z1-YV-MAy" secondAttribute="top" constant="13" id="Ghb-gZ-GKm"/>
+                                                            <constraint firstItem="IcN-G9-SXV" firstAttribute="top" secondItem="I8s-52-PBa" secondAttribute="bottom" constant="15" id="GtJ-3X-dsh"/>
+                                                            <constraint firstItem="I8s-52-PBa" firstAttribute="top" secondItem="TFr-TO-kD3" secondAttribute="bottom" constant="14" id="QaU-D9-sV0"/>
+                                                            <constraint firstItem="akZ-iM-Ivq" firstAttribute="top" secondItem="IcN-G9-SXV" secondAttribute="bottom" constant="13" id="SV0-mf-TDb"/>
+                                                            <constraint firstItem="TFr-TO-kD3" firstAttribute="leading" secondItem="I8s-52-PBa" secondAttribute="leading" id="fdz-bJ-b7R"/>
+                                                            <constraint firstAttribute="bottom" secondItem="akZ-iM-Ivq" secondAttribute="bottom" constant="23" id="ktJ-Ya-Rwn"/>
+                                                            <constraint firstItem="TFr-TO-kD3" firstAttribute="leading" secondItem="2Z1-YV-MAy" secondAttribute="leading" constant="20" symbolic="YES" id="oMd-Eu-vpc"/>
+                                                            <constraint firstItem="IcN-G9-SXV" firstAttribute="leading" secondItem="akZ-iM-Ivq" secondAttribute="leading" id="uJz-K9-FLu"/>
+                                                            <constraint firstItem="I8s-52-PBa" firstAttribute="leading" secondItem="IcN-G9-SXV" secondAttribute="leading" id="vxx-e7-oCu"/>
+                                                        </constraints>
+                                                    </view>
+                                                </box>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4Wv-C2-SZt" firstAttribute="leading" secondItem="lRX-AZ-Kgv" secondAttribute="leading" constant="9" id="8AW-IU-nZS"/>
+                                                <constraint firstItem="rPB-fm-epk" firstAttribute="top" secondItem="4Wv-C2-SZt" secondAttribute="bottom" constant="15" id="Pck-Em-HX7"/>
+                                                <constraint firstItem="rPB-fm-epk" firstAttribute="top" secondItem="lRX-AZ-Kgv" secondAttribute="top" constant="218" id="Uhy-jj-hYt"/>
+                                                <constraint firstAttribute="trailing" secondItem="4Wv-C2-SZt" secondAttribute="trailing" constant="9" id="cD1-Y2-OEi"/>
+                                                <constraint firstItem="4Wv-C2-SZt" firstAttribute="trailing" secondItem="rPB-fm-epk" secondAttribute="trailing" id="euS-8z-egE"/>
+                                                <constraint firstItem="4Wv-C2-SZt" firstAttribute="leading" secondItem="rPB-fm-epk" secondAttribute="leading" id="r4X-R4-tLE"/>
+                                                <constraint firstItem="4Wv-C2-SZt" firstAttribute="top" secondItem="lRX-AZ-Kgv" secondAttribute="top" constant="8" id="xok-YR-Yd7"/>
+                                            </constraints>
+                                        </view>
+                                    </tabViewItem>
+                                </tabViewItems>
+                            </tabView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="oPK-mc-hT7" firstAttribute="top" secondItem="qJa-kb-pjr" secondAttribute="top" id="1pU-bx-V7u"/>
+                            <constraint firstItem="oPK-mc-hT7" firstAttribute="leading" secondItem="qJa-kb-pjr" secondAttribute="leading" id="5aG-wi-gJY"/>
+                            <constraint firstItem="oPK-mc-hT7" firstAttribute="leading" secondItem="qJa-kb-pjr" secondAttribute="leading" id="Mf0-Ch-yxC"/>
+                            <constraint firstAttribute="bottom" secondItem="oPK-mc-hT7" secondAttribute="bottom" id="TMp-Ch-1N3"/>
+                            <constraint firstItem="oPK-mc-hT7" firstAttribute="top" secondItem="qJa-kb-pjr" secondAttribute="top" id="USJ-Wo-Xvk"/>
+                            <constraint firstAttribute="bottom" secondItem="oPK-mc-hT7" secondAttribute="bottom" id="fqc-et-XkL"/>
+                            <constraint firstAttribute="trailing" secondItem="oPK-mc-hT7" secondAttribute="trailing" id="iKK-hy-0J4"/>
+                            <constraint firstAttribute="trailing" secondItem="oPK-mc-hT7" secondAttribute="trailing" id="q5o-La-fkD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="driveMapAttachDrive" destination="jrD-hE-d1B" id="I7b-xL-v3J"/>
+                        <outlet property="driveMapShowAfterLoading" destination="JK9-QQ-eA9" id="87c-L6-gmI"/>
+                        <outlet property="driveMappingEnableDrive" destination="TYh-vG-gUc" id="NwO-V6-ntc"/>
+                        <outlet property="extraCreateNewMatter" destination="akZ-iM-Ivq" id="6fv-AE-oAD"/>
+                        <outlet property="extraLaunchClio" destination="TFr-TO-kD3" id="lvg-vy-3FT"/>
+                        <outlet property="extraShowClientFiles" destination="Abg-20-76K" id="90L-TX-5Ma"/>
+                        <outlet property="extraViewClientClo" destination="I8s-52-PBa" id="x6X-ZO-5i7"/>
+                        <outlet property="extraViewMatterInClio" destination="IcN-G9-SXV" id="hrq-aA-rNV"/>
+                        <outlet property="extrasShowClioBills" destination="fQ0-dX-D3E" id="irR-5r-az1"/>
+                        <outlet property="matterOrganizationMatterList" destination="crB-nu-SIf" id="MoI-CU-H3s"/>
+                        <outlet property="popupDriveLetter" destination="73L-Uu-to5" id="LMb-5d-dbS"/>
+                    </connections>
+                </viewController>
+                <customObject id="5OZ-u2-tvw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="EPM-Qu-IUv"/>
+            </objects>
+            <point key="canvasLocation" x="196.5" y="1606"/>
+        </scene>
+    </scenes>
+</document>

@@ -6,13 +6,19 @@ using Foundation;
 using AppKit;
 using AlphaDrive.Mac.Diagnostics.Models;
 
-namespace AlphaDrive.Mac
+namespace AlphaDrive.Mac.Diagnostics
 {
-	public partial class DiagnosisViewController : NSViewController
-	{
-		public DiagnosisViewController (IntPtr handle) : base (handle)
-		{
-		}
+    public partial class DiagnosisViewController : NSViewController
+    {
+        public static DiagnosisViewController CreateController()
+        {
+            var board = NSStoryboard.FromName("DiagnosisStoryboard", null);
+            return (DiagnosisViewController)board.InstantiateControllerWithIdentifier("DiagnosisViewController");
+        }
+
+        public DiagnosisViewController(IntPtr handle) : base(handle)
+        {
+        }
 
         private DiagnosisInfoModel _diagnosisInfo = new DiagnosisInfoModel();
 
@@ -36,5 +42,5 @@ namespace AlphaDrive.Mac
             DiagnosisInfoModel.LoadSettings();
         }
 
-	}
+    }
 }

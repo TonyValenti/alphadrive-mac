@@ -52,10 +52,17 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\DiagnosisInfoModel.cs" />
+    <Compile Include="DiagnosisViewController.cs" />
+    <Compile Include="DiagnosisViewController.designer.cs">
+      <DependentUpon>DiagnosisViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="DiagnosisStoryboard.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

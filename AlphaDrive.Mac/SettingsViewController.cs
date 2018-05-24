@@ -32,9 +32,9 @@ namespace AlphaDrive.Mac
 
 		}
 
-        private FileSettingsViewController _fileSettingsViewControl;
+        private AlphaDrive.Mac.FileSettings.FileSettingsViewController _fileSettingsViewControl;
 
-        private DiagnosisViewController _diagnosisViewControl;
+        private AlphaDrive.Mac.Diagnostics.DiagnosisViewController _diagnosisViewControl;
 
 
         private void OnItemClicked(object sender)
@@ -89,8 +89,13 @@ namespace AlphaDrive.Mac
         {
             base.ViewDidLoad();
 
-            _fileSettingsViewControl = (FileSettingsViewController)this.Storyboard.InstantiateControllerWithIdentifier("FileSettingsViewController");
-            _diagnosisViewControl = (DiagnosisViewController)this.Storyboard.InstantiateControllerWithIdentifier("DiagnosisViewController");
+            //_fileSettingsViewControl = (FileSettingsViewController)this.Storyboard.InstantiateControllerWithIdentifier("FileSettingsViewController");
+
+            _fileSettingsViewControl = AlphaDrive.Mac.FileSettings.FileSettingsViewController.CreateController();
+            _diagnosisViewControl = AlphaDrive.Mac.Diagnostics.DiagnosisViewController.CreateController();
+            //NSStoryboard.FromName("DiagnosisStoryboard")
+
+            //_diagnosisViewControl = (AlphaDrive.Mac.Diagnostics.DiagnosisViewController)this.Storyboard.InstantiateControllerWithIdentifier("DiagnosisViewController");
 
             MainPane.AddSubview(_fileSettingsViewControl.View);
 

@@ -85,14 +85,6 @@
       <DependentUpon>SettingsViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="ReplaceViewSeque.cs" />
-    <Compile Include="FileSettingsViewController.cs" />
-    <Compile Include="FileSettingsViewController.designer.cs">
-      <DependentUpon>FileSettingsViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DiagnosisViewController.cs" />
-    <Compile Include="DiagnosisViewController.designer.cs">
-      <DependentUpon>DiagnosisViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainPaneView.cs" />
     <Compile Include="MainPaneView.designer.cs">
       <DependentUpon>MainPaneView.cs</DependentUpon>
